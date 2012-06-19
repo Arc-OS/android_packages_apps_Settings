@@ -5,9 +5,17 @@
     <string name="arc_version">ARC version</string>
     <string name="arc_version_default">Unknown</string>
 
-    <!-- CPU and RAM info -->
-    <string name="cpu_info">CPU</string>
+    <!-- Hardware information -->
     <string name="mem_info">RAM</string>
+    <string name="gpu_info">GPU</string>
+    <string name="cpu_info">CPU</string>
+    <string name="cpu_type">CPU type</string>
+    <string name="hardware_info">Hardware information</string>
+    <string name="device_chipset">Chipset</string>
+    <string name="device_codename">Device codename</string>
+    <string name="device_rear_camera">Rear camera</string>
+    <string name="device_front_camera">Front facing camera</string>
+    <string name="device_screen_resolution">Screen resolution</string>
 
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>

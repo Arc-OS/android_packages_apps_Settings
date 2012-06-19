@@ -91,6 +91,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_ARC_VERSION = "arc_version";
     private static final String KEY_DEVICE_CPU = "device_cpu";
     private static final String KEY_DEVICE_MEMORY = "device_memory";
+    private static final String KEY_DEVICE_CODENAME = "device_codename";
+    private static final String KEY_DEVICE_CHIPSET = "device_chipset";
+    private static final String KEY_DEVICE_CPU_INFO = "device_cpu_info";
+    private static final String KEY_DEVICE_GPU = "device_gpu";
+    private static final String KEY_DEVICE_REAR_CAMERA = "device_rear_camera";
+    private static final String KEY_DEVICE_FRONT_CAMERA = "device_front_camera";
+    private static final String KEY_DEVICE_SCREEN_RESOLUTION = "device_screen_resolution";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -158,20 +165,32 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
 
-        String cpuInfo = getCPUInfo();
-        String memInfo = getMemInfo();
+        setStringSummary(KEY_DEVICE_CPU, getCPUInfo());
+        findPreference(KEY_DEVICE_CPU).setEnabled(true);
 
-        if (cpuInfo != null) {
-            setStringSummary(KEY_DEVICE_CPU, cpuInfo);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_CPU));
-        }
+        setStringSummary(KEY_DEVICE_MEMORY, getMemInfo());
+        findPreference(KEY_DEVICE_MEMORY).setEnabled(true);
 
-        if (memInfo != null) {
-            setStringSummary(KEY_DEVICE_MEMORY, memInfo);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_DEVICE_MEMORY));
-        }
+        setValueSummary(KEY_DEVICE_CODENAME, "ro.product.device");
+        findPreference(KEY_DEVICE_CODENAME).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_CHIPSET, "ro.device.chipset");
+        findPreference(KEY_DEVICE_CHIPSET).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_CPU_INFO, "ro.device.cpu_info");
+        findPreference(KEY_DEVICE_CPU_INFO).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_GPU, "ro.device.gpu");
+        findPreference(KEY_DEVICE_GPU).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_REAR_CAMERA, "ro.device.rear_cam");
+        findPreference(KEY_DEVICE_REAR_CAMERA).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_FRONT_CAMERA, "ro.device.front_cam");
+        findPreference(KEY_DEVICE_FRONT_CAMERA).setEnabled(true);
+
+        setValueSummary(KEY_DEVICE_SCREEN_RESOLUTION, "ro.device.screen_res");
+        findPreference(KEY_DEVICE_SCREEN_RESOLUTION).setEnabled(true);
 
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SAFETY_LEGAL,
