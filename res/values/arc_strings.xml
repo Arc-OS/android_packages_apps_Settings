@@ -5,4 +5,8 @@
     <string name="arc_version">ARC version</string>
     <string name="arc_version_default">Unknown</string>
 
+    <!-- CPU and RAM info -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
+
 </resources>
