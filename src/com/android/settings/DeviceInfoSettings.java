@@ -224,6 +224,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 getPreferenceScreen().removePreference(pref);
             }
         }
+        // Remove CyanogeMod info
+        removePreference(KEY_MOD_VERSION);
     }
 
     @Override
