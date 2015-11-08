@@ -77,6 +77,12 @@
                 android:title="@string/firmware_version"
                 android:summary="@string/device_info_default"/>
 
+        <!-- ARC version -->
+        <Preference android:key="arc_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/arc_version"
+                android:summary="@string/arc_version_default" />
+
         <!-- Mod version -->
         <Preference android:key="mod_version"
                 style="?android:preferenceInformationStyle"
