@@ -5,6 +5,10 @@
     <string name="arc_version">ARC version</string>
     <string name="arc_version_default">Unknown</string>
 
+    <!-- Battery saver color -->
+    <string name="battery_saver_color_title">Warning color</string>
+    <string name="battery_saver_color_summary">Enable orange status and navigation bars when battery saver is activated</string>
+
     <!-- Hardware information -->
     <string name="mem_info">RAM</string>
     <string name="gpu_info">GPU</string>
